@@ -17,7 +17,7 @@ RUN ARCH=$(uname -m) && \
     if [ "$ARCH" = "x86_64" ]; then XRAY_ARCH="64"; \
     elif [ "$ARCH" = "aarch64" ]; then XRAY_ARCH="arm64-v8a"; \
     else XRAY_ARCH="64"; fi && \
-    curl -L -H "Cache-Control: no-cache" -o xray.zip "https://github.com/XTLS/Xray-core/releases/download/v1.8.24/Xray-linux-${XRAY_ARCH}.zip" && \
+    curl -L -H "Cache-Control: no-cache" -o xray.zip "https://github.com/XTLS/Xray-core/releases/download/v26.5.9/Xray-linux-${XRAY_ARCH}.zip" && \
     mkdir -p /usr/bin/xray && \
     unzip xray.zip -d /usr/bin/xray/ && \
     rm xray.zip && \
