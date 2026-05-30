@@ -1,4 +1,7 @@
 :8080 {
+    # 增加这一行，让 Caddy 在内存中自动签发证书并开启 HTTPS
+    tls internal
+    
     handle /ss* {
         reverse_proxy 127.0.0.1:10001
     }
@@ -11,10 +14,11 @@
     handle /xhttp-vless* {
         reverse_proxy 127.0.0.1:10005
     }
+    # gRPC 依然通过 h2c (明文 HTTP/2) 转发给 Xray 核心
     handle /grpc-vless* {
         reverse_proxy h2c://127.0.0.1:10006
     }
-    # 瞎猜路径的一律返回普通文字，防白嫖防探测
+    # 瞎猜路径的一律返回普通文字
     handle {
         respond "Hello World" 200
     }
