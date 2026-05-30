@@ -68,7 +68,7 @@ keep_alive() {
   log "Starting Built-in Stable Keep-Alive Daemon..."
   while true; do
     # 1. 内部活跃：唤醒本地 Caddy 进程，防止系统判定进程休眠
-    curl -s http://127.0.0.1:8080/ >/dev/null 2>&1 || true
+    curl -s -k https://localhost:8080/ >/dev/null 2>&1 || true
 
     # 2. 外部活跃：向 Cloudflare 官方探针发送请求，维持网络 I/O 活跃
     curl -s https://1.1.1.1/cdn-cgi/trace >/dev/null 2>&1 || true
