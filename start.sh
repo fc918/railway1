@@ -114,7 +114,7 @@ health_check() {
 trap cleanup INT TERM
 
 log "Validating Xray config..."
-/usr/bin/xray/xray test -c /etc/xray/config.json
+/usr/bin/xray/xray run -test -c /etc/xray/config.json
 
 log "Validating Caddy config..."
 caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
