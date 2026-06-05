@@ -41,7 +41,7 @@ COPY start.sh /start.sh
 
 RUN dos2unix /start.sh /etc/caddy/Caddyfile /etc/xray/config.json \
     && chmod +x /start.sh \
-    && /usr/bin/xray/xray test -c /etc/xray/config.json \
+    && /usr/bin/xray/xray run -test -c /etc/xray/config.json \
     && caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
 
 CMD ["/start.sh"]
