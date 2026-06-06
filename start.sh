@@ -127,6 +127,6 @@ run_forever xray /usr/bin/xray/xray run -c /etc/xray/config.json &
 sleep 2
 run_forever caddy caddy run --config /etc/caddy/Caddyfile --adapter caddyfile &
 sleep 2
-run_forever cloudflared /usr/bin/cloudflared tunnel --no-autoupdate --protocol "${TUNNEL_EDGE_PROTOCOL}" run --token "${ARGO_TOKEN}" &
+run_forever cloudflared /usr/bin/cloudflared tunnel --no-autoupdate  run --token "${ARGO_TOKEN}" &
 
 wait
