@@ -10,7 +10,7 @@
       "protocol": "shadowsocks",
       "settings": {
         "method": "aes-128-gcm",
-        "password": "809a3434-de69-4790-a7b9-39e84c007f48",
+        "password": "wfc88888",
         "network": "tcp,udp"
       },
       "streamSettings": {
